@@ -80,6 +80,7 @@ jobs:
         with:
           path: ./out
           enablement: 'path'
+          
 
   # Deployment job
   deploy:
