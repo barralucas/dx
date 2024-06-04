@@ -79,7 +79,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
-          enablement: true
+          enablement: 'path'
 
   # Deployment job
   deploy:
