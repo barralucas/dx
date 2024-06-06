@@ -1,8 +1,23 @@
+'use client';
+
+import { useQuery, gql } from '@apollo/client';
+
+const testingQuery = gql`
+  query {
+    ping
+  }
+`;
+
 
 export default function Home() {
+  const { loading, error, data } = useQuery(testingQuery);
+  if (loading) return <h1>Loading..</h1>;
+  if (error) return <h1>Error! {error.message}</h1>;
+
   return (
-    <main className="flex mx-auto my-auto">
-      <h1 className="font-bold text-3xl">DX: Descentralized X</h1>
-    </main>
-  );
+    <div>
+      Hello
+      Testing ping: {data?.ping}
+    </div>
+  )
 }
